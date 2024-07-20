@@ -14,10 +14,11 @@ public class AddArticleRequest {
     private String content;
 
 
-    public Article toEntity() { // DTO -> Entity로 만들어주는 메서드
+    public Article toEntity(String author) { // DTO -> Entity로 만들어주는 메서드
         return Article.builder()
                 .title(title)
                 .content(content)
+                .author(author)
                 .build();
     }
 }

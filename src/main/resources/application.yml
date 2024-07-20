@@ -1,6 +1,4 @@
 spring:
-
-
   h2:
     console:
       enabled: true
@@ -13,5 +11,16 @@ spring:
 
     defer-datasource-initialization: true
 
-server:
-  port: 5000
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - email
+              - profile
+jwt:
+  issuer: ajufresh@gmail.com
+  secret_key:  ${JWT_SECRET_KEY}

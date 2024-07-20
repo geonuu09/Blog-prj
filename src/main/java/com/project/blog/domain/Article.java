@@ -25,6 +25,15 @@ public class Article {
     @Column(name= "content",nullable = false)
     private String content;
 
+    @Column(name = "author", nullable = false)
+    private String author;
+
+    @Builder
+    public Article(String author, String content, String title) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
 
 
     @Builder
