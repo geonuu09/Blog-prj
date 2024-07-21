@@ -4,7 +4,6 @@ import com.project.blog.config.jwt.TokenProvider;
 import com.project.blog.config.oauth.OAuth2SuccessHandler;
 import com.project.blog.config.oauth.OAuth2UserCustomService;
 import com.project.blog.repository.RefreshTokenRepository;
-import com.project.blog.service.RefreshTokenService;
 import com.project.blog.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -35,9 +34,9 @@ public class WebOAuthSecurityConfig {
         return (web) -> web.ignoring()
                 .requestMatchers(toH2Console())
                 .requestMatchers(
-                        new AntPathRequestMatcher("/img/**"),
+                        new AntPathRequestMatcher("/static/img/**"),
                         new AntPathRequestMatcher("/css/**"),
-                        new AntPathRequestMatcher("/js/**")
+                        new AntPathRequestMatcher("/static/js/**")
                 );
     }
 
